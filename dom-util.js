@@ -5,8 +5,9 @@ const visitAllNodes = function(node, callback) {
   if (node.childNodes.length === 0) {
     return callback(node);
   }
-  callback(node);
+  //callback(node);
   node.childNodes.forEach((node) => visitAllNodes(node, callback));
+  return callback(node);
 };
  
 const flattenTreeToArray = function(node) {
